@@ -1,0 +1,48 @@
+###Prerequisites##
+RESCAL: https://github.com/mnick/rescal.py
+
+###Dependencies:
+Numpy >= 1.3, SciPy >= 0.7
+
+
+To reproduce the AUC-ROC using harmonic function reported in the paper use the file:
+
+harmonic_function_closed_form.py
+
+This program uses following parameters needs to change in the code:
+
+# network = "data/combined_scores.txt"
+#labeled_percentage = 0.3 (30% labelled data)
+# EMB = 1  (Enabling Embedding Network EMB = 1 / Disabling Embedding Network EMB = 0 )
+# EXP = 1   (Enabling Genetic Interaction Network EXP = 1 / Disabling Genetic Interaction Network EXP = 0) 
+##"Positive Labels:"###
+#GT = ground_truth[labels_keys.index("blocker"),:].A[0] 
+
+##For Predicting "antagonist" Labels, replace "blocker" by "antagonist" 
+
+
+##########################################################
+List of genetic interaction network files used in the study
+
+1. coexp_scores.txt: Coexpression Network
+2. cooccurence_scores.txt: Cooccurence Network
+3. experimental_scores: Experimental Network
+4. fusion_scores.txt: Fusion Network
+5. neighborhood_scores.txt: Neighborhood Network
+6. textmining_scores.txt: Textmining Network
+7. database_scores.txt: Database Network
+8. combined_scores.txt: Combined scores of all the Genetic Interaction Network
+
+ 
+#########################################################
+Bipartite graphs used for creating genetic embeddings graph
+
+1. tumor_gene_hasGene_data.csv : Tumor samples and Genes bipartite graph
+2. drugs_gene_copy.txt: Drugs and Genes bipartite graph
+
+
+#########################################################
+Information about Tumor samples:
+1. tumor_nodes_bipartite_graph.txt : 
+
+This file contains the tumor samples used in our studies. In this file there are tumor samples id's used in the tumor-gene bipartite graph, sample name and the location of the sample.
